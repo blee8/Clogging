@@ -426,8 +426,8 @@ def plot_xy(self, model=None, dset_name=None, plot_col='FlowHt', max_subplots=40
   if dset_name is not None :
       data = [dataset]
   else :
-      data = [self.train, self.val]
-      #data = [self.train, self.val, self.test]
+      #data = [self.train, self.val]
+      data = [self.train, self.val, self.test]
   for j, dataset in enumerate(data) :
       for i, batch in enumerate(dataset) :
             inputs, labels, lab = batch
@@ -482,11 +482,13 @@ def plot_xy(self, model=None, dset_name=None, plot_col='FlowHt', max_subplots=40
                       #ax2.plot(lab[n,:,0], labels[n, :, label_col_index], 'r-', zorder=1.5 )
 
                      # ax2.scatter(lab[n,:, 0],   predictions[n, :, label_col_index], label='Predictions',
-                      ax2.scatter(lab[n, :, 0], predictions[n, :, plot_col_index], label='Predictions',
-                                              marker='o',  color = 'red', facecolors='none', s=8)
+                      #ax2.scatter(lab[n, :, 0], predictions[n, :, plot_col_index], label='Predictions',, s=8
+                      ax2.scatter(lab[n, :, 0], predictions[n, :, 0], label='Predictions',
+                             marker='X',   color = colors[j])
 
-                      ax3.scatter(predictions[n, :, plot_col_index], labels[n, :, label_col_index],
-                                color = colors[j],  facecolors='none', marker = '.')
+                      #ax3.scatter(predictions[n, :, plot_col_index], labels[n, :, label_col_index],
+                      ax3.scatter(predictions[n, :, 0], labels[n, :, label_col_index],
+                                              color = colors[j],  facecolors='none', marker = '.')
 
                       l_max = np.array([tf.reduce_max(labels)])
                       p_max = np.array([tf.reduce_max(predictions)])

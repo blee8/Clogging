@@ -16,8 +16,10 @@ def plot_curve(trg, valg, teg):
 #    plt.plot(teg['IR'], teg['FlowHt'], 'r-', linewidth=2.0,  zorder=2)
  #   plt.plot(curve_0['IR'], curve_0['FlowHt'], 'k-', label='curve')
 
-    plt.xlabel('norm IR')
-    plt.ylabel('norm Flow Height [m]')
+#    plt.xlabel('norm IR')
+#    plt.ylabel('norm Flow Height [m]')
+    plt.xlabel('IR')
+    plt.ylabel('Flow Height [m]')
     plt.xlim([plt.xlim()[1], plt.xlim()[0]])
     plt.ylim([plt.ylim()[0], plt.ylim()[1]])
     plt.legend(loc='best')

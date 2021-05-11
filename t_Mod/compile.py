@@ -36,12 +36,12 @@ def fit_2(model, window,   patience=2, EPOCHS=None):
                                                     mode='min')
     if EPOCHS == 'True' :
         history = model.fit(window.train, epochs=plots_t.MAX_EPOCHS,
-                      validation_data=window.val, verbose=0,
+                      validation_data=window.val, verbose=1,
                       callbacks=[early_stopping])
 
     else :
         history = model.fit(window.train, epochs= MAX_EPOCHS,
-                      validation_data=window.val, verbose=0,
+                      validation_data=window.val, verbose=1,
                       callbacks=[early_stopping])
 
     return history
