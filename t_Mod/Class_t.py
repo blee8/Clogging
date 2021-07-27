@@ -413,11 +413,11 @@ def plot_xy(self, model=None, dset_name=None, plot_col='FlowHt', max_subplots=40
 #            dataset = self.train
 
   if model is not None :
-        fig, ax2 = plt.subplots(figsize =(7,3))
+        fig, ax2 = plt.subplots(figsize =(5,2.5))
         ax2.margins(0.01)
 #  fig, ax4 = plt.subplots(figsize=(7, 3))
 
-  fig, ax3 = plt.subplots(figsize =(5,5))
+  fig, ax3 = plt.subplots(figsize =(3,3))
   ax3.margins(0.01)
 
   markers = ["o", "s", "D", "h"]
